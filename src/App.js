@@ -1,7 +1,10 @@
+import LogIn from "./LogIn";
+import Register from "./Register";
+
 function App() {
   return (
     <div className="App">
-      Hello from App
+      <Register />
     </div>
   );
 }
