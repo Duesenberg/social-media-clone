@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'Beautiful People';
+  src: url('../fonts/BeautifulPeoplePersonalUse-dE0g.ttf');
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  border: 1px lightgray solid;
+  padding: 25px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0px;
+}
+
+.form-container .logo {
+  font-family: 'Beautiful People';
+  font-size: 2.3rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  font-style: italic;
+  color: #962fbf;
+}
+
+.form-container .title {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+form input {
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  padding: 8px;
+}
+form input:focus {
+  outline: none;
+  border: 1px solid gray;
+}
+
+form input[type=file] {
+  display: none;
+}
+form label.file-label {
+  padding: 8px;
+  background-color: #4267B2;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  font-style: bold;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+form label.file-label:hover {
+  background-color: #537ed4;
+}
+form label.file-label:active {
+  background-color: #4267B2;
+}
+
+form button {
+  padding: 8px;
+  background-color: #4267B2;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  font-style: bold;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+form button:hover {
+  background-color: #537ed4;
+}
+form button:active {
+  background-color: #4267B2;
+}
+
+.bottom-text {
+  font-size: .9rem;
+}
