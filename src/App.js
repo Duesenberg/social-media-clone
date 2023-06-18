@@ -1,12 +1,5 @@
-import LogIn from "./LogIn";
-import Register from "./Register";
-
-function App() {
+export default function App () {
   return (
-    <div className="App">
-      <LogIn />
-    </div>
-  );
+    <div>Hello from App</div>
+  )
 }
-
-export default App;
