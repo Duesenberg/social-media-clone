@@ -1,0 +1,24 @@
+.home-container {
+  display: flex;
+  flex: 1;
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  flex: 0.25;
+  height: 100vh;
+}
+
+.wall-container {
+  flex: 1;
+}
+
+.personal-container {
+  flex: 0.25;
+}
+
+.navbar-container .buttons-container {
+  display: flex;
+  flex-direction: column;
+}
