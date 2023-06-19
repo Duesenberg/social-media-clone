@@ -2,6 +2,7 @@ export default function NavBar () {
   return (
     <div className="navbar-container">
       <div className="logo">DuesenSpace</div>
+      <div className="logo-tablet">D</div>
 
       <div className="buttons-container">
         <button className="home">

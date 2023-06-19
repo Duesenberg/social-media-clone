@@ -50,9 +50,11 @@ button.home .icon {
   width: 30px;
   height: 30px;
 }
+
 button.home:hover .icon {
   background-image: url('../icons/home_FILL0_wght400_GRAD200_opsz48.svg');
 }
+
 button.search .icon {
   background-image: url('../icons/pageview_FILL0_wght400_GRAD0_opsz48.svg');
   background-size: contain;
@@ -60,9 +62,11 @@ button.search .icon {
   width: 30px;
   height: 30px;
 }
+
 button.search:hover .icon {
   background-image: url('../icons/pageview_FILL0_wght400_GRAD200_opsz48.svg');
 }
+
 button.messages .icon {
   background-image: url('../icons/sms_FILL0_wght400_GRAD0_opsz48.svg');
   background-size: contain;
@@ -70,9 +74,11 @@ button.messages .icon {
   width: 30px;
   height: 30px;
 }
+
 button.messages:hover .icon {
   background-image: url('../icons/sms_FILL0_wght400_GRAD200_opsz48.svg');
 }
+
 button.notifications .icon {
   background-image: url('../icons/notifications_FILL0_wght400_GRAD0_opsz48.svg');
   background-size: contain;
@@ -80,9 +86,11 @@ button.notifications .icon {
   width: 30px;
   height: 30px;
 }
+
 button.notifications:hover .icon {
   background-image: url('../icons/notifications_FILL0_wght400_GRAD200_opsz48.svg');
 }
+
 button.create .icon {
   background-image: url('../icons/edit_square_FILL0_wght400_GRAD0_opsz48.svg');
   background-size: contain;
@@ -90,9 +98,11 @@ button.create .icon {
   width: 30px;
   height: 30px;
 }
+
 button.create:hover .icon {
   background-image: url('../icons/edit_square_FILL0_wght400_GRAD200_opsz48.svg');
 }
+
 button.profile .icon {
   background-image: url('../icons/person_FILL0_wght400_GRAD0_opsz48.svg');
   background-position: center;
@@ -100,6 +110,7 @@ button.profile .icon {
   width: 30px;
   height: 30px;
 }
+
 button.profile:hover .icon {
   background-image: url('../icons/person_FILL0_wght400_GRAD200_opsz48.svg');
 }
@@ -108,6 +119,7 @@ button:hover {
   background-color: rgb(237, 237, 237);
   border-radius: 5px;
 }
+
 button:active {
   background-color: rgb(242, 242, 242);
   border-radius: 5px;
@@ -120,4 +132,98 @@ button:active {
   font-weight: bold;
   margin: 15px 0px;
   padding: 0 10px;
+}
+
+.navbar-container .logo-tablet {
+  font-family: 'Beautiful People';
+  font-size: 1.5rem;
+  text-align: start;
+  font-weight: bold;
+  margin: 15px 0px;
+  padding: 0 10px;
+  display: none;
+}
+
+.mobile-header-container { display: none; }
+
+/* for tablet */
+
+@media (max-width: 1120px) {
+  .navbar-container { flex: .05; }
+
+  .navbar-container .logo { display: none; }
+
+  .navbar-container .logo-tablet { display: block; }
+
+  button .text { display: none; }
+
+  .personal-container { display: none; }
+}
+
+/* for mobile */
+
+@media (max-width: 770px) {
+  .home-container { flex-direction: column-reverse; }
+
+  .navbar-container .logo-tablet { display: none; }
+
+  .navbar-container .buttons-container {
+    flex-direction: row;
+    gap: 0px;
+  }
+
+  .buttons-container button { 
+    flex: 1;
+    justify-content: center;
+  }
+
+  button.messages, button.notifications { display: none; }
+
+  .mobile-header-container {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex: .03;
+  }
+
+  .mobile-header-container .buttons-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .mobile-header-container .buttons-container button { display: block; }
+
+  .mobile-header-container button.messages .icon {
+    background-image: url('../icons/sms_FILL0_wght400_GRAD0_opsz48.svg');
+    background-size: contain;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+  }
+
+  .mobile-header-container button.messages:hover .icon {
+    background-image: url('../icons/sms_FILL0_wght400_GRAD200_opsz48.svg');
+  }
+
+  .mobile-header-container button.notifications .icon {
+    background-image: url('../icons/notifications_FILL0_wght400_GRAD0_opsz48.svg');
+    background-size: contain;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+  }
+
+  .mobile-header-container button.notifications:hover .icon {
+    background-image: url('../icons/notifications_FILL0_wght400_GRAD200_opsz48.svg');
+  }
+
+  .mobile-header-container .logo {
+    font-family: 'Beautiful People';
+    font-size: 1.5rem;
+    text-align: start;
+    font-weight: bold;
+    margin: 15px 0px;
+    padding: 0 10px;
+  }
+
 }
