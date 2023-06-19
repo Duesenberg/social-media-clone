@@ -1,13 +1,20 @@
+@font-face {
+  font-family: 'Beautiful People';
+  src: url('../fonts/BeautifulPeoplePersonalUse-dE0g.ttf');
+}
+
 .home-container {
   display: flex;
   flex: 1;
+  height: 100vh;
 }
 
 .navbar-container {
   display: flex;
   flex-direction: column;
-  flex: 0.25;
-  height: 100vh;
+  flex: 0.35;
+  border-right: 1px solid lightgrey;
+  padding: 10px;
 }
 
 .wall-container {
@@ -15,10 +22,102 @@
 }
 
 .personal-container {
-  flex: 0.25;
+  flex: 0.3;
 }
 
 .navbar-container .buttons-container {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  gap: 15px;
+}
+
+.buttons-container button {
+  display: flex;
+  gap: 10px;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: white;
+  border: none;
+}
+
+button.home .icon {
+  background-image: url('../icons/home_FILL0_wght400_GRAD0_opsz48.svg');
+  background-size: contain;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+}
+button.home:hover .icon {
+  background-image: url('../icons/home_FILL0_wght400_GRAD200_opsz48.svg');
+}
+button.search .icon {
+  background-image: url('../icons/pageview_FILL0_wght400_GRAD0_opsz48.svg');
+  background-size: contain;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+}
+button.search:hover .icon {
+  background-image: url('../icons/pageview_FILL0_wght400_GRAD200_opsz48.svg');
+}
+button.messages .icon {
+  background-image: url('../icons/sms_FILL0_wght400_GRAD0_opsz48.svg');
+  background-size: contain;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+}
+button.messages:hover .icon {
+  background-image: url('../icons/sms_FILL0_wght400_GRAD200_opsz48.svg');
+}
+button.notifications .icon {
+  background-image: url('../icons/notifications_FILL0_wght400_GRAD0_opsz48.svg');
+  background-size: contain;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+}
+button.notifications:hover .icon {
+  background-image: url('../icons/notifications_FILL0_wght400_GRAD200_opsz48.svg');
+}
+button.create .icon {
+  background-image: url('../icons/edit_square_FILL0_wght400_GRAD0_opsz48.svg');
+  background-size: contain;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+}
+button.create:hover .icon {
+  background-image: url('../icons/edit_square_FILL0_wght400_GRAD200_opsz48.svg');
+}
+button.profile .icon {
+  background-image: url('../icons/person_FILL0_wght400_GRAD0_opsz48.svg');
+  background-position: center;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+}
+button.profile:hover .icon {
+  background-image: url('../icons/person_FILL0_wght400_GRAD200_opsz48.svg');
+}
+
+button:hover {
+  background-color: rgb(237, 237, 237);
+  border-radius: 5px;
+}
+button:active {
+  background-color: rgb(242, 242, 242);
+  border-radius: 5px;
+}
+
+.navbar-container .logo {
+  font-family: 'Beautiful People';
+  font-size: 1.5rem;
+  text-align: start;
+  font-weight: bold;
+  margin: 15px 0px;
+  padding: 0 10px;
 }

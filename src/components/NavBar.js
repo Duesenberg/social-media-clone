@@ -5,22 +5,22 @@ export default function NavBar () {
 
       <div className="buttons-container">
         <button className="home">
-          <img className="icon" alt="home" /><span className="text">Home</span>
+          <div className="icon" /><span className="text">Home</span>
         </button>
         <button className="search">
-          <img className="icon" alt="search" /><span className="text">Search</span>
+          <div className="icon" /><span className="text">Search</span>
         </button>
         <button className="messages">
-          <img className="icon" alt="messages" /><span className="text">Messages</span>
+          <div className="icon" /><span className="text">Messages</span>
         </button>
         <button className="notifications">
-          <img className="icon" alt="notifications" /><span className="text">Notifications</span>
+          <div className="icon" /><span className="text">Notifications</span>
         </button>
         <button className="create">
-          <img className="icon" alt="create" /><span className="text">Create</span>
+          <div className="icon" /><span className="text">Create</span>
         </button>
         <button className="profile">
-          <img className="icon" alt="profile" /><span className="text">Profile</span>
+          <div className="icon" /><span className="text">Profile</span>
         </button>
       </div>
     </div>
