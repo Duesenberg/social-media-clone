@@ -17,12 +17,8 @@
   padding: 10px;
 }
 
-.wall-container {
+.main-container {
   flex: 1;
-}
-
-.personal-container {
-  flex: 0.3;
 }
 
 .navbar-container .buttons-container {
@@ -189,6 +185,11 @@ button:active {
 @media (max-width: 770px) {
   .home-container { flex-direction: column-reverse; }
 
+  .navbar-container { 
+    border-top: 1px solid lightgray;
+    border-right: none;
+   }
+
   .navbar-container .logo-tablet { display: none; }
 
   .navbar-container .buttons-container {
@@ -208,6 +209,7 @@ button:active {
     display: flex;
     justify-content: space-between;
     flex: .03;
+    border-bottom: 1px solid lightgray;
   }
 
   .mobile-header-container .buttons-container {

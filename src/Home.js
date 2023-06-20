@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 import MobileHeader from "./components/MobileHeader";
 import NavBar from "./components/NavBar";
 import './styles/Home.css';
+import Main from './components/Main';
 
 export default function Home () {
   const [selectedTab, setSelectedTab] = useState('0');
@@ -16,10 +17,7 @@ export default function Home () {
       <NavBar 
         selectedTab={selectedTab}
         selectTab={selectTab} />
-
-      {/* placeholders for wall and profile section */}
-      <div className="wall-container">Wall</div>
-      <div className="personal-container">Personal</div>
+      <Main selectedTab={selectedTab} />
       <MobileHeader 
         selectedTab={selectedTab}
         selectTab={selectTab} />
