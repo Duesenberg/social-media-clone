@@ -1,0 +1,59 @@
+.messages-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.messages-container .conversations-container {
+  flex: .45;
+  border-right: 1px solid lightgray;
+  overflow: auto;
+}
+
+.messages-container .chat-container {
+  flex: 1;
+}
+
+.conversations-container .conversation {
+  border-radius: 0;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.conversations-container .conversation:hover {
+  background-color: rgb(237, 237, 237);
+}
+
+.conversation .conversation-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 5px;
+}
+
+.conversation-info p {
+  margin: 0;
+}
+
+.conversation-info .title {
+  font-size: 1.05rem;
+}
+
+.conversation-info .last-message {
+  color: gray;
+  font-size: .9rem;
+  padding-left: 5px;
+}
+
+.conversations-container .profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
