@@ -123,3 +123,88 @@
   background-color: transparent;
   padding: 10px 10px 0px 10px;
 }
+
+.send-message-container {
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.send-message-container input {
+  font-size: .95rem;
+  flex: 1;
+  padding: 10px;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.send-message-container input:hover {border: 1px solid rgb(176, 175, 175);}
+
+.send-message-container input:focus {border: 1px solid rgb(123, 123, 123);}
+
+.send-message-container .buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.send-message-container .buttons button {
+  padding: 20px;
+  border: none;
+  background-color: transparent;
+}
+
+.send-message-container .buttons .file {
+  background-image: url('../icons/attachment_FILL0_wght400_GRAD0_opsz48.svg');
+  background-size: contain;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+}
+
+.send-message-container .buttons .file:hover {
+  background-image: url('../icons/attachment_FILL0_wght600_GRAD0_opsz48.svg');
+  cursor: pointer;
+}
+
+.send-message-container .buttons .file:active {
+  background-image: url('../icons/attachment_FILL0_wght400_GRAD0_opsz48.svg');
+  cursor: pointer;
+}
+
+.send-message-container .buttons .photo {
+  background-image: url('../icons/photo_FILL0_wght400_GRAD0_opsz48.svg');
+  background-size: contain;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+}
+
+.send-message-container .buttons .photo:hover {
+  background-image: url('../icons/photo_FILL0_wght500_GRAD0_opsz48.svg');
+  cursor: pointer;
+}
+
+.send-message-container .buttons .photo:active {
+  background-image: url('../icons/photo_FILL0_wght400_GRAD0_opsz48.svg');
+  cursor: pointer;
+}
+
+.send-message-container .buttons .send {
+  background-image: url('../icons/send_FILL0_wght400_GRAD0_opsz48.svg');
+  background-size: contain;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+}
+
+.send-message-container .buttons .send:hover {
+  background-image: url('../icons/send_FILL0_wght600_GRAD0_opsz48.svg');
+  cursor: pointer;
+}
+
+.send-message-container .buttons .send:active {
+  background-image: url('../icons/send_FILL0_wght400_GRAD0_opsz48.svg');
+  cursor: pointer;
+}
