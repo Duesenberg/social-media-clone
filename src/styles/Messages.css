@@ -51,9 +51,75 @@
   padding-left: 5px;
 }
 
-.conversations-container .profile-picture {
+.conversations-container .profile-picture,
+.chat-title .profile-picture {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-container .chat-title {
+  display: flex;
+  padding: 15px;
+  gap: 15px;
+  border-bottom: 1px solid lightgray;
+}
+
+.chat-title .name {
+  font-size: 1.1;
+  font-weight: bold;
+}
+
+.chat-messages  {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 5px;
+  overflow: auto;
+}
+
+.chat-messages .message-container {
+  align-self: self-end;
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+}
+
+.chat-messages .message-container.friend {
+  align-self: flex-start;
+  align-items: start;
+}
+
+.chat-messages .message-container p {
+  background-color: #6795ef;
+  border-radius: 15px;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: .9rem;
+  padding: 10px;
+}
+
+.chat-messages .message-container.friend p {
+  background-color: lightgray;
+  color: rgb(48, 48, 48);
+}
+
+.chat-messages .message-container.friend .timestamp {
+  color: lightgray;
+  background-color: transparent;
+}
+
+.chat-messages .message-container .timestamp {
+  font-size: .75;
+  color: lightgray;
+  background-color: transparent;
+  padding: 10px 10px 0px 10px;
 }
