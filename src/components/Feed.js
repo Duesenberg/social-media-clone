@@ -1,5 +1,13 @@
+import React from "react";
+import Post from "./Post";
+import "../styles/Feed.css";
+
 export default function Feed () {
   return (
-    <div>Hello from Feed</div>
+    <div className="feed-container">
+      <Post />
+      <Post />
+      <Post />
+    </div>
   )
 }
