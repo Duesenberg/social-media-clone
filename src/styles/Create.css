@@ -1,0 +1,86 @@
+.create-container {
+  padding: 40px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.create-container .card {
+  width: 500px;
+  border: 1px solid lightgray;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.create-container .card .title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.create-container .card .input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+input#postCaption {
+  width: 440px;
+  background-color: rgb(237, 237, 237);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+input#postCaption:focus { outline: 1px solid lightgray; }
+
+.create-container .card .input-container input[type=file] {
+  display: none;
+}
+
+.input-container label.post-photo-label {
+  width: 440px;
+  padding: 10px;
+  background-color: #4267B2;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-style: bold;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.input-container label.post-photo-label:hover {
+  background-color: #537ed4;
+}
+
+.input-container label.post-photo-label:active {
+  background-color: #4267B2;
+}
+
+form.input-container button {
+  width: 460px;
+  padding: 10px;
+  background-color: #4267B2;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-style: bold;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+form.input-container button:hover {
+  background-color: #537ed4;
+}
+
+form.input-container button:active {
+  background-color: #4267B2;
+}
