@@ -6,7 +6,6 @@
   gap: 20px;
   overflow: auto;
   align-items: center;
-  padding: 25px 0;
 }
 
 .post {
@@ -124,6 +123,7 @@
 
 @media (max-width: 770px) {
   .feed-container {
+    height: calc(100vh - 79px - 71px);
     position: absolute;
     top: 79px;
     left: 0;
@@ -133,6 +133,6 @@
   .post {
     width: auto;
     margin: 10px;
-    min-width: 370px;
+    min-width: 360px;
   }
 }

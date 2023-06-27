@@ -55,3 +55,25 @@
   border-radius: 0px;
  }
 
+ @media (max-width: 770px) {
+  .search-container {
+    height: calc(100vh - 79px - 71px);
+    position: absolute;
+    left: 0;
+    top: 79px;
+  }
+
+  .search-container .sub-container {
+    width: 360px;
+    padding: 10px;
+  }
+
+  .search-container .sub-container input {
+    width: 340px;
+  }
+
+  .search-container .search-results {
+    width: 360px;
+  }
+ }
+
