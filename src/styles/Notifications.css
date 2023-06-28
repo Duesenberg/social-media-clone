@@ -38,3 +38,18 @@
   border-radius: 0px;
  }
 
+@media (max-width: 770px) {
+  .notifications-container {
+    position: absolute;
+    top: 79px;
+    height: calc(100vh - 70px - 79px);
+  }
+
+  .notifications-container .sub-container {
+    width: 360px;
+  }
+
+  .sub-container .notification {
+    width: 360px;
+  } 
+}
