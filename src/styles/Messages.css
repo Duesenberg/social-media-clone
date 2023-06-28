@@ -53,8 +53,8 @@
 
 .conversations-container .profile-picture,
 .chat-title .profile-picture {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -66,7 +66,8 @@
 
 .chat-container .chat-title {
   display: flex;
-  padding: 15px;
+  align-items: center;
+  padding: 10px 25px;
   gap: 15px;
   border-bottom: 1px solid lightgray;
 }
@@ -207,4 +208,17 @@
 .send-message-container .buttons .send:active {
   background-image: url('../icons/send_FILL0_wght400_GRAD0_opsz48.svg');
   cursor: pointer;
+}
+
+/* mobile */
+
+@media (max-width: 770px) {
+  .messages-container {
+    position: absolute;
+    left: 0;
+    top: 79px;
+    height: calc(100vh - 70px - 79px);
+  }
+
+  .conversations-container { display: none; }
 }
