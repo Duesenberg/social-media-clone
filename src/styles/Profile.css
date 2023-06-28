@@ -60,3 +60,12 @@
 .profile-info button:active {
   background-color: #4267B2;
 }
+
+@media (max-width: 770px) {
+  .profile-container {
+    position: absolute;
+    left: 0;
+    top: 79px;
+    height: calc(100vh - 79px - 70px);
+  }
+}

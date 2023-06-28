@@ -65,7 +65,7 @@
 } 
 
 .actions .like-button:active {
-  background-image: url('../icons/favorite_FILL0_wght400_GRAD0_opsz48.svg');
+  background-image: url('../icons/favorite_FILL1_wght400_GRAD0_opsz48.svg');
   cursor: pointer;
 }
 
@@ -85,7 +85,7 @@
 } 
 
 .actions .comment-button:active {
-  background-image: url('../icons/comment_FILL0_wght400_GRAD0_opsz48.svg');
+  background-image: url('../icons/comment_FILL1_wght400_GRAD0_opsz48.svg');
   cursor: pointer;
 }
 
