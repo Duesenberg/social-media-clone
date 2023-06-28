@@ -84,3 +84,27 @@ form.input-container button:hover {
 form.input-container button:active {
   background-color: #4267B2;
 }
+
+@media (max-width: 770px) {
+  .create-container {
+    position: absolute;
+    top: 79px;
+    height: calc(100vh - 70px - 79px);
+    padding: 0;
+  }
+
+  .create-container .card {
+    width: 340px;
+    margin-top: 20px;
+  }
+
+  .card .input-container #postCaption,
+  .card .input-container #addPostPhoto,
+  .card .input-container .post-photo-label {
+    width: 250px;
+  }
+
+  .card .input-container button {
+    width: 270px;
+  }
+}
