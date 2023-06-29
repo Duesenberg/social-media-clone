@@ -15,6 +15,8 @@ export default function RouteSwitch () {
         <Navigate to='/login' />
       )
     }
+
+    return children;
   }
 
   return (

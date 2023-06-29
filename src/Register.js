@@ -1,11 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './styles/RegisterAndLogin.css';
 import { auth, storage, db } from './firebase';
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { setDoc, doc } from 'firebase/firestore';
+import Home from './Home';
 
 export default function Register () {
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -60,7 +63,7 @@ export default function Register () {
               displayName: userName,
               photoURL: downloadURL
             });
-
+            
             //Add user to Cloud Firestore
             await setDoc(doc(db, 'users', res.user.uid), {
               uid: res.user.uid,
@@ -69,8 +72,11 @@ export default function Register () {
               photoURL: downloadURL
             });
 
-            //Add chats collection for user
+            //Add empty chats collection for user
             await setDoc(doc(db, 'userChats', res.user.uid), {});
+
+            //Navigate to home
+            navigate("/");
           });
         }
       );
@@ -82,7 +88,6 @@ export default function Register () {
       errorMessage.textContent = 'Register successful';
     } catch(err) {
       console.log(err);
-
       //Handle error message
       const errorMessage = document.querySelector('.error-handling')
       errorMessage.classList.remove('successful');
