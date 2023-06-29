@@ -67,7 +67,10 @@ export default function Register () {
               displayName: userName,
               email,
               photoURL: downloadURL
-            })
+            });
+
+            //Add chats collection for user
+            await setDoc(doc(db, 'userChats', res.user.uid), {});
           });
         }
       );
