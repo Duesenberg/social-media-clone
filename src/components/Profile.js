@@ -1,6 +1,8 @@
 import React from 'react';
 import Post from './Post';
 import '../styles/Profile.css';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
 
 export default function Profile () {
   return (
@@ -15,6 +17,7 @@ export default function Profile () {
           <p className='username'>John Doe</p>
           <p className='bio'>No hill for a stepper</p>
           <button className='edit-profile'>Edit Profile</button>
+          <button className='logout' onClick={signOut(auth)}>Log Out</button>
         </div>
       </div>
 
