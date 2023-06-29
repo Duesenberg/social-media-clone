@@ -17,7 +17,11 @@ export default function Profile () {
           <p className='username'>John Doe</p>
           <p className='bio'>No hill for a stepper</p>
           <button className='edit-profile'>Edit Profile</button>
-          <button className='logout' onClick={signOut(auth)}>Log Out</button>
+          <button 
+            className='logout' 
+            onClick={() => {
+              signOut(auth);
+            }}>Log Out</button>
         </div>
       </div>
 
