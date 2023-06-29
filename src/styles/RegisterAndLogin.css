@@ -87,6 +87,10 @@ form label.file-label:active {
   background-color: #4267B2;
 }
 
+form label.file-label.unsuccessful { background-color: rgb(198, 68, 68); }
+
+form label.file-label.successful { background-color: rgb(54, 152, 54); }
+
 form button {
   padding: 8px;
   background-color: #4267B2;
@@ -109,3 +113,17 @@ form button:active {
   margin: 0;
   font-size: .9rem;
 }
+
+span.error-handling {
+  color: transparent;
+  font-weight: bold;
+  position: relative;
+  top: -5px;
+  font-size: .75rem;
+  text-align: center;
+  padding: 0;
+}
+
+span.error-handling.unsuccessful { color: rgb(198, 68, 68); }
+
+span.error-handling.successful { color: rgb(54, 152, 54); }
