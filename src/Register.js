@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import './styles/RegisterAndLogin.css';
-import { auth, storage } from './firebase';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, storage, db } from './firebase';
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { setDoc, doc } from 'firebase/firestore';
 
 export default function Register () {
   const handleSubmit = async (e) => {
@@ -52,6 +53,22 @@ export default function Register () {
           uploadButton.textContent = 'Upload successful';
           uploadButton.classList.remove('unsuccessful');
           uploadButton.classList.add('successful');
+
+          //Update user data
+          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            await updateProfile(res.user, {
+              displayName: userName,
+              photoURL: downloadURL
+            });
+
+            //Add user to Cloud Firestore
+            await setDoc(doc(db, 'users', res.user.uid), {
+              uid: res.user.uid,
+              displayName: userName,
+              email,
+              photoURL: downloadURL
+            })
+          });
         }
       );
 
@@ -92,7 +109,7 @@ export default function Register () {
     const uploadButton = document.querySelector('.file-label');
     uploadButton.classList.remove('unsuccessful');
     uploadButton.classList.remove('successful');
-    uploadButton.textContent = 'Select Photo';
+    uploadButton.textContent = 'Select Profile Photo';
   }
 
   return (
@@ -117,7 +134,7 @@ export default function Register () {
           <label 
             htmlFor='addFile' 
             className='file-label'
-            onClick={handlePhotoClick}>Select Photo</label>
+            onClick={handlePhotoClick}>Select Profile Photo</label>
           <span className='photo-validation'>Please select a photo.</span>
           <button onClick={ handleClick }>Register</button>
           <span className='error-handling'>...</span>
