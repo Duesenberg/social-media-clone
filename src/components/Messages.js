@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Conversations from "./Conversations";
 import Chat from "./Chat";
 import { collection, query, where, getDocs } from "firebase/firestore";
@@ -27,7 +27,6 @@ export default function Messages () {
       //If query is empty, set user to null
       if (querySnapshot.empty) setUser(null);
     } catch(err) {
-      console.log(err);
     }
   }
 
@@ -46,10 +45,15 @@ export default function Messages () {
             name='profile-search' 
             className="profile-search" 
             placeholder='Search'
-            onChange={handleChange} />
+            onChange={handleChange}
+            value={userName} />
         </form>
         {(user !== null && user !== undefined) ? 
-          <ChatSearchResults user={user} /> : null}
+          <ChatSearchResults 
+            user={user}
+            setUser={setUser}
+            userName={userName}
+            setUserName={setUserName} /> : null}
         <Conversations />
       </div>
       <Chat />

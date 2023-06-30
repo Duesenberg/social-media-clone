@@ -8,8 +8,6 @@ import { AuthContext } from '../contexts/AuthContext';
 export default function Profile () {
   const { currentUser } = useContext(AuthContext);
 
-  console.log(currentUser);
-
   return (
     <div className='profile-container'>
       <div className='profile-header'>
