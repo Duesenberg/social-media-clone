@@ -119,6 +119,16 @@
   gap: 5px;
 }
 
+/* for tablet */
+
+@media (max-width: 1120px) {
+  .post {
+    width: auto;
+    margin: 10px;
+    min-width: 360px;
+  }
+}
+
 /* mobile */
 
 @media (max-width: 770px) {

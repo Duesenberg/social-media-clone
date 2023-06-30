@@ -17,24 +17,19 @@
 .profile-header .profile-picture {
   width: 100px;
   height: 100px;
+  object-fit: cover;
 }
 
 .profile-header .profile-info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: start;
-  gap: 5px;
 }
 
 .profile-info p {
   margin: 0;
   padding: 0;
-}
-
-.profile-info p.bio {
-  color: rgb(135, 135, 135);
-  font-style: italic;
 }
 
 .posts-title {

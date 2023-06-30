@@ -4,17 +4,39 @@
   display: flex;
 }
 
-.messages-container .conversations-container {
+input.profile-search {
+  width: 80%;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(237, 237, 237);
+  padding: 10px;
+  margin: 20px 10px;
+  outline: none;
+}
+
+input.profile-search:focus { 
+  border: none;
+  outline: 1px solid lightgray; }
+
+.messages-container .conversations-container, 
+.messages-container .chat-results-container {
   flex: .45;
   border-right: 1px solid lightgray;
   overflow: auto;
+}
+
+.messages-container .chat-results-container {
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  flex-direction: column;
 }
 
 .messages-container .chat-container {
   flex: 1;
 }
 
-.conversations-container .conversation {
+.conversations-container .conversation,
+.chat-results-container .user-container {
   border-radius: 0;
   background-color: white;
   border: none;
@@ -26,7 +48,10 @@
   gap: 15px;
 }
 
-.conversations-container .conversation:hover {
+.conversations-container .user-container { width: auto; }
+
+.conversations-container .conversation:hover,
+.chat-results-container .user-container:hover {
   background-color: rgb(237, 237, 237);
 }
 
