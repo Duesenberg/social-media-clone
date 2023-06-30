@@ -20,7 +20,10 @@ export default function LogIn () {
       //Redirect to home page
       navigate('/');
     } catch(err) {
-      console.log(err);
+      console.log(err.message);
+      const errorMessage = document.querySelector('.error-handling');
+      errorMessage.classList.add('unsuccessful');
+      errorMessage.textContent = 'Invalid email or password';
     }
   }
 
@@ -33,6 +36,7 @@ export default function LogIn () {
         <form onSubmit={handleSubmit}>
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password" />
+          <span className='error-handling'>...</span>
           <button>Log In</button>
         </form>
 
