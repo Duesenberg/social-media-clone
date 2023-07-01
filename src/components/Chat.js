@@ -1,67 +1,41 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { ChatContext } from "../contexts/ChatContext";
+import { doc, onSnapshot } from "firebase/firestore";
+import { db } from "../firebase";
+import Message from "./Message";
+import Input from "./Input";
 
 export default function Chat () {
+  const { data } = useContext(ChatContext);
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    const unSub = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
+      doc.exists() && setMessages(doc.data().messages);
+    });
+
+    return () => {
+      unSub();
+    };
+  }, [data.chatId]);
+
   return (
     <div className="chat-container">
       <div className="chat-title">
         <img 
             className="profile-picture"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTutp6Rf6nH24hRGK5NBsW5LFII03lUqcgLNQ&usqp=CAU"
+            src={data.user.photoURL}
             alt="" />
-        <p className="name">John Doe</p>
+        <p className="name">{data.user.displayName}</p>
       </div>
 
       <div className="chat-messages">
-        <div className="message-container">
-          <p className="timestamp">5/6/23 22:00</p>
-          <p className="message">Hey what's up</p>
-        </div>
-        
-        <div className="message-container friend">
-          <p className="timestamp">5/6/23 22:10</p>
-          <p className="message">Not much hbu</p>
-        </div>
-
-        <div className="message-container">
-          <p className="timestamp">5/6/23 22:15</p>
-          <p className="message">Hey what's up</p>
-        </div>
-        
-        <div className="message-container friend">
-          <p className="timestamp">5/6/23 22:20</p>
-          <p className="message">Hey what's up</p>
-        </div>
-
-        <div className="message-container">
-          <p className="timestamp">5/6/23 22:00</p>
-          <p className="message">Hey what's up</p>
-        </div>
-        
-        <div className="message-container friend">
-          <p className="timestamp">5/6/23 22:10</p>
-          <p className="message">Not much hbu</p>
-        </div>
-
-        <div className="message-container">
-          <p className="timestamp">5/6/23 22:15</p>
-          <p className="message">Hey what's up</p>
-        </div>
-        
-        <div className="message-container friend">
-          <p className="timestamp">5/6/23 22:20</p>
-          <p className="message">Hey what's up</p>
-        </div>
+        {messages.map((m) => {
+          <Message message={m} key={m.id}/>
+        })}
       </div>
 
-      <div className="send-message-container">
-        <input type="text" name="send-message" />
-
-        <div className="buttons">
-          <button className="file"><div className="icon" /></button>
-          <button className="photo"><div className="icon" /></button>
-          <button className="send"><div className="icon" /></button>
-        </div>
-      </div>
+      <Input />
     </div>
   )
 }
