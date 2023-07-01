@@ -66,6 +66,9 @@ export default function Input () {
     setImg(null);
   };
 
+  //Execute handleSend when enter key is pressed
+  const handleKeyDown = async (e) => { e.code === 'Enter' && handleSend(); }
+
   return (
     <div className="send-message-container">
       <input 
@@ -73,6 +76,7 @@ export default function Input () {
         name="send-message"
         placeholder="Type a message"
         onChange={(e) => setText(e.target.value)}
+        onKeyDown={handleKeyDown}
         value={text} />
 
       <div className="buttons">
