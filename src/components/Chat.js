@@ -9,6 +9,7 @@ export default function Chat () {
   const { data } = useContext(ChatContext);
   const [messages, setMessages] = useState([]);
 
+  //Update messages any time the document in "chats" collection updates
   useEffect(() => {
     const unSub = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
       doc.exists() && setMessages(doc.data().messages);
@@ -31,7 +32,9 @@ export default function Chat () {
 
       <div className="chat-messages">
         {messages.map((m) => {
-          <Message message={m} key={m.id}/>
+          return (
+            <Message message={m} key={m.id}/>
+          )
         })}
       </div>
 

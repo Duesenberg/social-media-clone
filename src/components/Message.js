@@ -1,15 +1,21 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { AuthContext } from "../contexts/AuthContext";
-import { ChatContext } from "../contexts/ChatContext";
 
-export default function Message ({ m }) {
+export default function Message ({ message }) {
   const { currentUser } = useContext(AuthContext);
-  const { data } = useContext(ChatContext);
+  //Create reference to message div
+  const ref = useRef();
+  //Scroll to latest message any time messages update
+  useEffect(() => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  }, [message]);
 
   return (
-    <div className="message-container">
-      <p className="timestamp">5/6/23 22:00</p>
-      <p className="message">Hey what's up</p>
-  </div>
+    <div 
+      ref={ref} 
+      className={`message-container ${message.senderId !== currentUser.uid && "friend"}`}>
+        <p className="message">{message.text}</p>
+        { message.img && <img className="image" src={message.img} alt="" />}
+    </div>
   )
 }

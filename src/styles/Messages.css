@@ -115,7 +115,7 @@ input.profile-search:focus {
   display: flex;
   flex-direction: column;
   padding: 15px;
-  gap: 5px;
+  gap: 30px;
   overflow: auto;
 }
 
@@ -156,6 +156,13 @@ input.profile-search:focus {
   color: lightgray;
   background-color: transparent;
   padding: 10px 10px 0px 10px;
+}
+
+.chat-messages .message-container .image {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 5px;
 }
 
 .send-message-container {
