@@ -20,8 +20,11 @@ export default function Chat () {
     };
   }, [data.chatId]);
 
+  console.log(data)
+
   return (
     <div className="chat-container">
+      {data.chatId !== 'null' &&
       <div className="chat-title">
         <img 
             className="profile-picture"
@@ -29,6 +32,7 @@ export default function Chat () {
             alt="" />
         <p className="name">{data.user.displayName}</p>
       </div>
+      }
 
       <div className="chat-messages">
         {messages.map((m) => {
@@ -38,7 +42,7 @@ export default function Chat () {
         })}
       </div>
 
-      <Input />
+      {data.chatId !== 'null' && <Input />}
     </div>
   )
 }
