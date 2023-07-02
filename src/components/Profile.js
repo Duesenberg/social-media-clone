@@ -28,9 +28,9 @@ export default function Profile () {
 
       <p className='posts-title'>Posts</p>
       <div className='profile-posts'>
+        {/* <Post />
         <Post />
-        <Post />
-        <Post />
+        <Post /> */}
       </div>
     </div>
   )

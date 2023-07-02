@@ -68,7 +68,8 @@ export default function Create () {
             name='post-caption' 
             id='postCaption' 
             placeholder="What's on your mind?"
-            onChange={(e) => setCaption(e.target.value)} />
+            onChange={(e) => setCaption(e.target.value)}
+            value={caption} />
 
           <input 
             type="file" 

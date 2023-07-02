@@ -1,36 +1,24 @@
 import React from "react";
+import uniqid from 'uniqid';
 
-export default function Comments () {
+export default function Comments ({ post }) {
   return (
     <div className='comments-container'>
       <p className="title">Comments</p>
-
-      <div className="comment">
-        <img 
-          className="profile-picture" 
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTutp6Rf6nH24hRGK5NBsW5LFII03lUqcgLNQ&usqp=CAU"
-          alt="Profile" />
-        <span className="username">John Doe</span>
-        <span className="text">That looks great!</span>
-      </div>
-
-      <div className="comment">
-        <img 
-          className="profile-picture" 
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTutp6Rf6nH24hRGK5NBsW5LFII03lUqcgLNQ&usqp=CAU"
-          alt="Profile" />
-        <span className="username">John Doe</span>
-        <span className="text">That looks great!</span>
-      </div>
-      
-      <div className="comment">
-        <img 
-          className="profile-picture" 
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTutp6Rf6nH24hRGK5NBsW5LFII03lUqcgLNQ&usqp=CAU"
-          alt="Profile" />
-        <span className="username">John Doe</span>
-        <span className="text">That looks great!</span>
-      </div>
+      {post.data.comments.map(comment => {
+        return (
+          <div className="comment" key={uniqid()}>
+            <img 
+              className="profile-picture" 
+              src={comment.photoURL}
+              alt="Profile" />
+            <span className="username">{comment.displayName}</span>
+            <span className="text">{comment.commentText}</span>
+          </div>
+        )
+      })}
+      {post.data.comments.length === 0 && 
+        <p className="no-comments">There are no comments on this post.</p>}
     </div>
   )
 }
