@@ -36,9 +36,20 @@ export default function Messages () {
     handleSearch();
   }
 
+  //Hide chat and bring back conversations
+  const handleClick = () => {
+    const convosContainer = document.querySelector('.hide-conversations-button + div');
+    convosContainer.classList.add('visible');
+    const backButton = document.querySelector('.hide-conversations-button.visible');
+    backButton.classList.remove('visible');
+  }
+
   return (
     <div className="messages-container">
-      <div className="conversations-container">
+      <button 
+        className="hide-conversations-button"
+        onClick={handleClick}>Back</button>
+      <div className="conversations-container visible">
         <form className="search-form" onSubmit={handleSubmit}>
           <input 
             type='text' 

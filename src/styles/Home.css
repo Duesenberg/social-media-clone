@@ -193,10 +193,10 @@ button:active {
   .navbar-container {
     width: 100vw;
     padding: 0;
-    position: absolute;
+    /* position: absolute;
     bottom: 0; 
     left: 0;
-    z-index: 1;
+    z-index: 1; */
     background-color: white;
     border-top: 1px solid lightgray;
     border-right: none;
@@ -219,9 +219,9 @@ button:active {
 
   .mobile-header-container {
     width: 100vw;
-    position: absolute;
+    /* position: absolute;
     left: 0;
-    top: 0;
+    top: 0; */
     background-color: white;
     display: flex;
     justify-content: space-between;

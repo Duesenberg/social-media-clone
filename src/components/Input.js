@@ -62,9 +62,6 @@ export default function Input () {
       [data.chatId + ".date"]: serverTimestamp(),
     });
 
-    console.log(text)
-    console.log(img);
-
     setText("");
     setImg(null);
   };

@@ -27,6 +27,13 @@ export default function Conversations () {
 
   const handleSelect = (u) => {
     dispatch({ type: 'CHANGE_USER', payload: u });
+
+    //Hide conversations container when on mobile
+    const convosContainer = document.querySelector('.conversations-container.visible');
+    convosContainer.classList.remove('visible');
+    //Show Back button
+    const backButton = document.querySelector('.hide-conversations-button');
+    backButton.classList.add('visible');
   }
 
   return (

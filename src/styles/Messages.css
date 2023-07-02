@@ -250,6 +250,10 @@ input.profile-search:focus {
   cursor: pointer;
 }
 
+.hide-conversations-button {
+  display: none;
+}
+
 /* mobile */
 
 @media (max-width: 770px) {
@@ -257,8 +261,48 @@ input.profile-search:focus {
     position: absolute;
     left: 0;
     top: 79px;
-    height: calc(100vh - 70px - 79px);
+    height: calc(100% - 70px - 79px);
   }
 
   .conversations-container { display: none; }
+
+  .conversations-container.visible {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: none;
+    background-color: white;
+  }
+
+  .conversations-container.visible .conversations-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hide-conversations-button.visible {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 15px;
+    padding: 10px;
+    background-color: #4267B2;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    font-style: bold;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .hide-conversations-button.visible:hover {
+    background-color: #537ed4;
+  }
+  .hide-conversations-button.visible:active {
+    background-color: #4267B2;
+  }
 }
