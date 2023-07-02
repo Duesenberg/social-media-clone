@@ -13,9 +13,9 @@ export default function Main ({ selectedTab }) {
   return (
     <div className="main-container">
       { selectedTab === '0' && <Feed /> }
-      { selectedTab === '1' && <Search /> }
+      {/* { selectedTab === '1' && <Search /> } */}
       { selectedTab === '2' && <Messages /> }
-      { selectedTab === '3' && <Notifications /> }
+      {/* { selectedTab === '3' && <Notifications /> } */}
       { selectedTab === '4' && <Create /> }
       { selectedTab === '5' && <Profile /> }
     </div>

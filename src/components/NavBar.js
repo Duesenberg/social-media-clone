@@ -34,24 +34,24 @@ export default function NavBar ({ selectedTab, selectTab }) {
           onClick={selectTab}>
             <div className="icon" /><span className="text">Home</span>
         </button>
-        <button 
+        {/* <button 
           className="search" 
           data-tabindex={1}
           onClick={selectTab}>
             <div className="icon" /><span className="text">Search</span>
-        </button>
+        </button> */}
         <button 
           className="messages" 
           data-tabindex={2}
           onClick={selectTab}>
             <div className="icon" /><span className="text">Messages</span>
         </button>
-        <button 
+        {/* <button 
           className="notifications" 
           data-tabindex={3}
           onClick={selectTab}>
             <div className="icon" /><span className="text">Notifications</span>
-        </button>
+        </button> */}
         <button 
           className="create" 
           data-tabindex={4}

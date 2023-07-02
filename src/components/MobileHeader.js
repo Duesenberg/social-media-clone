@@ -32,12 +32,12 @@ export default function MobileHeader ({ selectedTab, selectTab }) {
           onClick={selectTab}>
             <div className="icon" />
         </button>
-        <button 
+        {/* <button 
           className="notifications" 
           data-tabindex={3}
           onClick={selectTab}>
             <div className="icon" />
-        </button>
+        </button> */}
       </div>
     </div>
   )

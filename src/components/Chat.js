@@ -20,8 +20,6 @@ export default function Chat () {
     };
   }, [data.chatId]);
 
-  console.log(data)
-
   return (
     <div className="chat-container">
       {data.chatId !== 'null' &&
