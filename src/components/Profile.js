@@ -42,7 +42,7 @@ export default function Profile () {
 
       <p className='posts-title'>Posts</p>
       <div className='profile-posts'>
-      {feedPosts.map((post) => {
+      {feedPosts.sort((a, b) => b.data.date - a.data.date).map((post) => {
         return (
           <Post key={uniqid()} post={ post } />
         )

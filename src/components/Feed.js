@@ -15,7 +15,7 @@ export default function Feed () {
   
   return (
     <div className="feed-container">
-      {feedPosts.map((post) => {
+      {feedPosts.sort((a, b) => b.data.date - a.data.date).map((post) => {
         return (
           <Post key={uniqid()} post={ post } />
         )

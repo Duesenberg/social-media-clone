@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import '../styles/Create.css';
 import { AuthContext } from '../contexts/AuthContext';
 import uniqid from 'uniqid';
-import { addDoc, collection, doc } from 'firebase/firestore';
+import { Timestamp, addDoc, collection, doc } from 'firebase/firestore';
 import { db, storage } from '../firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 
@@ -33,6 +33,7 @@ export default function Create () {
                 displayName: currentUser.displayName,
                 photoURL: currentUser.photoURL,
                 caption: caption,
+                date: Timestamp.now(),
                 comments: [],
                 img: downloadURL
               })
@@ -46,6 +47,7 @@ export default function Create () {
           displayName: currentUser.displayName,
           photoURL: currentUser.photoURL,
           caption: caption,
+          date: Timestamp.now(),
           comments: []
         })
       }
