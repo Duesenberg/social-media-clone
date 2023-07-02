@@ -1,12 +1,26 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Post from './Post';
 import '../styles/Profile.css';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
 import { AuthContext } from '../contexts/AuthContext';
+import { PostContext } from '../contexts/PostContext';
+import uniqid from 'uniqid';
 
 export default function Profile () {
   const { currentUser } = useContext(AuthContext);
+  const { posts } = useContext(PostContext);
+  const [feedPosts, setFeedPosts] = useState([]);
+
+  useEffect(() => {
+    if (posts.length !== 0) {
+      let feedPostsCopy = [];
+      posts.forEach(post => {
+        if (post.data.uid === currentUser.uid) feedPostsCopy.push(post);
+      });
+      setFeedPosts(feedPostsCopy);
+    }
+  }, [posts, currentUser.uid])
 
   return (
     <div className='profile-container'>
@@ -28,9 +42,11 @@ export default function Profile () {
 
       <p className='posts-title'>Posts</p>
       <div className='profile-posts'>
-        {/* <Post />
-        <Post />
-        <Post /> */}
+      {feedPosts.map((post) => {
+        return (
+          <Post key={uniqid()} post={ post } />
+        )
+      })}
       </div>
     </div>
   )
